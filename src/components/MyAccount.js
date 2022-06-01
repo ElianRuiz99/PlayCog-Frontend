@@ -40,8 +40,7 @@ function MyAccount(){
                     let fecha = dividirFecha[0];
                     response.data.fecha_nacimiento = fecha;
                     setDataUser(response.data)
-                }
-                
+                }   
             })
             .catch(err =>{
                 console.log(err)
