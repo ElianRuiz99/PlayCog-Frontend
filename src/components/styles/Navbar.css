@@ -1,0 +1,15 @@
+.container-nav{
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #edf6e7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo{
+    height: 60px;
+    width: 200px;
+    object-fit: cover;
+}

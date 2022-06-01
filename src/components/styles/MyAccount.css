@@ -1,0 +1,165 @@
+:root{
+    /* Colors */
+    --white:#FFFFFF;
+    --Black: #000000;
+    --bluelight: #87cec8;
+    --blueDark: #327479;
+    --pinklight: #fff4e5;
+    /* size */
+    --sm: 14px;
+    --md: 18px;
+    --lg: 22px;
+}
+
+body{
+    width: 100%; 
+    background-repeat:no-repeat;
+    object-fit: cover;
+    background-size: 50% auto ;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: auto;
+    margin-top: 100px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bluelight);
+    width: 400px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.form-container h1{
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: var(--lg);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input{
+    border: none;
+    background: var(--white);
+    width: 250px;
+    height: 32px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    background-color:#FFFFFF;
+    opacity: 0.8;
+}
+
+.form-container a{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container .secondary-button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: none;
+    color: var(--bluelight);
+    cursor: pointer;
+    width: 150px;
+    font-size: var(--sm);
+    font-weight: 700;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.secondary-button:hover{
+    color: var(--blueDark);
+}
+
+.container-buttons{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Modal */
+.container-delete{
+    background-color: var(--blueDark);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.container-delete h2{
+    font-size: var(--lg);
+    margin: 0;
+    color: var(--white);
+    font-weight: 500;
+}
+.container-delete p{
+    color: var(--white);
+    font-size: var(--md);
+}
+.container-delete button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: none;
+    color: var(--bluelight);
+    cursor: pointer;
+    width: 150px;
+    font-size: var(--md);
+    font-weight: 700;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.container-delete button:hover{
+    border: 1px solid var(--bluelight);
+    color: var(--blueDark);
+}
+
+/* Logo */
+
+.ListVideogames{
+    background-color: var(--bluelight);
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    margin-left: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ListVideogames:hover{
+    background-color: var(--blueDark);
+}
+
+.ListVideogames img{
+    padding: 8px;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+/*  */
+@media (max-width: 600px){
+    .container-delete{
+        width: 50%;
+    }
+}

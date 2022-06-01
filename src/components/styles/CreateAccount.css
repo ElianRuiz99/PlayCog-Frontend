@@ -1,0 +1,132 @@
+:root{
+    /* Colors */
+    --white:#FFFFFF;
+    --Black: #000000;
+    --bluelight: #87cec8;
+    --blueDark: #327479;
+    --pinklight: #fff4e5;
+    /* size */
+    --sm: 14px;
+    --md: 18px;
+    --lg: 22px;
+}
+
+body{
+    width: 100%; 
+    background-repeat:no-repeat;
+    object-fit: cover;
+    background-size: 50% auto ;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: auto;
+    margin-top: 100px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bluelight);
+    width: 400px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.form-container h1{
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: var(--lg);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input{
+    border: none;
+    background: var(--white);
+    width: 250px;
+    height: 32px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    background-color:#FFFFFF;
+    opacity: 0.8;
+}
+
+.form-container a{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container .secondary-button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: none;
+    color: var(--bluelight);
+    cursor: pointer;
+    width: 200px;
+    font-size: var(--md);
+    font-weight: 700;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.secondary-button:hover{
+    color: var(--blueDark);
+}
+
+/* modal */
+.Modal-container h2{
+    font-size: var(--lg);
+    margin: 0;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.Modal-container p{
+    color: var(--white);
+    font-size: var(--md);
+}
+.Modal-container{
+    background-color: var(--blueDark);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.Modal-container button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: none;
+    color: var(--bluelight);
+    cursor: pointer;
+    width: 150px;
+    font-size: var(--md);
+    font-weight: 700;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+.Modal-container button:hover{
+    border: 1px solid var(--bluelight);
+    color: var(--blueDark);
+}
+
+@media (max-width: 600px){
+    .Modal-container{
+        width: 50%;
+    }
+}

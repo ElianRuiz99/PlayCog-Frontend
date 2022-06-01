@@ -1,0 +1,36 @@
+:root{
+    /* Colors */
+    --white:#FFFFFF;
+    --Black: #000000;
+    --bluelight: #87cec8;
+    --blueDark: #327479;
+    --pinklight: #fff4e5;
+    /* size */
+    --sm: 14px;
+    --md: 18px;
+    --lg: 22px;
+}
+
+.container-title{
+    padding: 8px;
+    border: 1px solid var(--bluelight) ;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.container-videogames{
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--Black);
+}
+
+@media (max-width: 600px){
+    .container-videogames{
+        flex-direction: column;
+    }
+    .container-videogames a{
+        margin-bottom: 8px;
+    }
+}
