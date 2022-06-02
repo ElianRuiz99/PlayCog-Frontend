@@ -29,7 +29,6 @@ function MyAccount(){
     useEffect(() => {
         axios({
             url: `https://playcog.uc.r.appspot.com/user/${correo}`,
-
         })
             .then(response =>{
                 setDataUser(response.data)
