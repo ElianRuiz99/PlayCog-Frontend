@@ -88,7 +88,6 @@ function MyAccount(props){
                     <div className="ListVideogames">
                         <a href={`/videogame`}><img src={control} /></a>
                     </div>
-                    
             </body>
 
             {!!openModalUpdate && (
