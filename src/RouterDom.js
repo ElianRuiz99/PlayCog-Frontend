@@ -11,8 +11,8 @@ function RouterDom(){
           <Routes>
             <Route path='/' element={ <Home />} />
             <Route path='/createAccount' element={ <CreateAccount />} />
-            <Route path='/videogame/:correo' element={ <ListVideogame />} />
-            <Route path='/myAccount/:correo' element={ <MyAccount />} />
+            <Route path='/videogame/' element={ <ListVideogame />} />
+            <Route path='/myAccount/' element={ <MyAccount />} />
             {/* <Route path='*' element={ <NotFoundPage />} /> */ }
           </Routes>
         </BrowserRouter>

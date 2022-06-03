@@ -78,7 +78,7 @@ function CreateAccount(){
                     <div className='Modal-container'>
                         <h2>Felicidades!!</h2>
                         <p>Tu cuenta ha sido creada</p>
-                        <a href={`/myAccount/${form.correo}`}><button>Cerrar</button></a>
+                        <a href={`/myAccount`}><button>Cerrar</button></a>
                     </div>
                 </Modal>
             )}
