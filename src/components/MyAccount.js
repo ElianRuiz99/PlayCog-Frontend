@@ -26,7 +26,7 @@ function MyAccount(){
     //Estado nueva informacion
     const [newData, setNewData] = React.useState({})
 
-    useEffect(() => {
+    React.useEffect(() => {
         axios({
             url: `https://playcog.uc.r.appspot.com/user/${correo}`,
         })
@@ -84,8 +84,6 @@ function MyAccount(){
                             <input type="number" id="celular" required name="celular" placeholder={dataUser.celular} onChange={newhandleChange} />
 
                             <input type="text" id="direccion_residencia" required name="direccion_residencia" placeholder={dataUser.direccion_residencia} onChange={newhandleChange} />
-
-                            <input type="text" id="fecha_nacimiento" placeholder="2000-01-01" onChange={newhandleChange} />
 
                             <div className="container-buttons">
                                 <a><button onClick={updateUser} className='secondary-button'>ACTUALIZAR</button></a>

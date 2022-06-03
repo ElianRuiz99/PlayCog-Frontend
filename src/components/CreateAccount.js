@@ -13,8 +13,7 @@ function CreateAccount(){
     //Estado Modal 
     const [openModal, setOpenModal] = React.useState(false);
 
-    //variable identificador
-    let correo; 
+    const [correo, setCorreo] = React.useState('')
 
     //Estado del formulario
     const [form, setForm] = React.useState({});
@@ -32,10 +31,11 @@ function CreateAccount(){
         e.preventDefault();
         console.log('Formulario Enviado');
 
-        //guardar variable identificador
-        correo = form.correo
-        console.log(correo)
+        //guardar estado identificador
+        setCorreo(form.correo)
 
+        // console.log(correo)
+        console.log(form);
         //guardar usuario
         saveUser(form)
 
