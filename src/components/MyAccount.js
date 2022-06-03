@@ -7,7 +7,7 @@ import { Modal } from "../modal/Modal";
 import { Modal2 } from "../modal/Modal2";
 import control from "../assets/control.png";
 import { UpdateUser } from "../api/UpdateUser";
-import { getUser } from "../api/UserService";
+
 
 function MyAccount(props){
     //Estado correo

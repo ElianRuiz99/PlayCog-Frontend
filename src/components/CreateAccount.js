@@ -5,7 +5,6 @@ import './styles/CreateAccount.css';
 //api
 import { saveUser } from "../api/UserService";
 import { Modal } from "../modal/Modal";
-import { MyAccount } from "./MyAccount";
 
 
 //modal
