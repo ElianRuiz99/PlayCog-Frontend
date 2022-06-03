@@ -19,7 +19,7 @@ body{
     background-position: center center;
     background-attachment: fixed;
     overflow: auto;
-    margin-top: 100px;
+    margin-top: 75px;
 }
 
 .form-container{
@@ -32,6 +32,7 @@ body{
     width: 400px;
     padding-bottom: 20px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .form-container h1{
@@ -45,6 +46,9 @@ body{
 .form-container form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .form-container input{
@@ -61,6 +65,11 @@ body{
     opacity: 0.8;
 }
 
+.form-container label{
+    color: #fff4e5;
+    padding: 5px 0px 5px 0px;
+}
+
 .form-container a{
     margin-left: auto;
     margin-right: auto;
@@ -75,10 +84,11 @@ body{
     width: 150px;
     font-size: var(--sm);
     font-weight: 700;
-    height: 48px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
+    cursor: pointer;
 }
 .secondary-button:hover{
     color: var(--blueDark);

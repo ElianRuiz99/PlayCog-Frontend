@@ -7,16 +7,14 @@ import { Modal } from "../modal/Modal";
 import { Modal2 } from "../modal/Modal2";
 import control from "../assets/control.png";
 import { UpdateUser } from "../api/UpdateUser";
-import { useParams } from "react-router-dom";
+import { getUser } from "../api/UserService";
 
-function MyAccount(){
-
-    let params = useParams();
-    let correo = params.correo;
-
+function MyAccount(props){
+    //Estado correo
+    const [correo, setCorreo] = React.useState('');
 
     //Estado informacion Usuario
-    const [dataUser, setDataUser] = React.useState([]);
+    const [dataUser, setDataUser] = React.useState({});
 
     //Estado modal
     const [openModalDelete, setOpenModalDelete] = React.useState(false);
@@ -25,27 +23,6 @@ function MyAccount(){
 
     //Estado nueva informacion
     const [newData, setNewData] = React.useState({})
-
-    React.useEffect(() => {
-        axios({
-            url: `https://playcog.uc.r.appspot.com/user/${correo}`,
-        })
-            .then(response =>{
-                setDataUser(response.data)
-                if(response.data.fecha_nacimiento == null){
-                    setDataUser(response.data)
-                }else{
-                    let dividirFecha = response.data.fecha_nacimiento.split(' ');
-                    let fecha = dividirFecha[0];
-                    response.data.fecha_nacimiento = fecha;
-                    setDataUser(response.data)
-                }   
-            })
-            .catch(err =>{
-                console.log(err)
-            })
-
-    }, [setDataUser]);
     
     const handleSubmitDelete = (id) => {
         console.log(id)
@@ -66,32 +43,59 @@ function MyAccount(){
         UpdateUser(newData, dataUser.correo)
         setOpenModalUpdate(true)
     }
+
+    const saveCorreo = (event) =>{
+        setCorreo(event.target.value)
+    }
+
+    const searchUser = () => {
+        axios({
+            url: `https://playcog.uc.r.appspot.com//user/${correo}`,
+        })
+            .then(response =>{
+                if(response.data.fecha_nacimiento == null){
+                    console.log(response.data)
+                    setDataUser(response.data)
+                }else{
+                    let dividirFecha = response.data.fecha_nacimiento.split(' ');
+                    let fecha = dividirFecha[0];
+                    response.data.fecha_nacimiento = fecha;
+                    console.log(response.data)
+                    setDataUser(response.data) 
+                }   
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    }
     
     return(
         <>
             <body background={fondo}>
-                    <div className='form-container'>
-                        <h1>Mi Cuenta</h1>
-                                    
-                            <input type="text" id="nombre" required name="nombre" placeholder={dataUser.nombre} onChange={newhandleChange} />
+                <div className='form-container'>
+                    <label>Digite su Correo para traer sus datos:</label>
+                    <input type="text" name="correo" placeholder="Correo" required onChange={saveCorreo}/>
+                    <button onClick={searchUser} className='secondary-button'>TRAER DATOS</button>
+                </div>
 
-                            <input type="text" id="apellido" required name="apellido" placeholder={dataUser.apellido} onChange={newhandleChange} />
-                                
-                            <input type="email" id="correo" value={dataUser.correo} />
-
-                            <input type="password" required id="contrasena" name="contrasena" placeholder={dataUser.contrasena} onChange={newhandleChange} />
-
-                            <input type="number" id="celular" required name="celular" placeholder={dataUser.celular} onChange={newhandleChange} />
-
-                            <input type="text" id="direccion_residencia" required name="direccion_residencia" placeholder={dataUser.direccion_residencia} onChange={newhandleChange} />
+                <div className='form-container'>
+                    <h1>Mi Cuenta</h1>
+                        <form onSubmit={updateUser}>
+                            <input type="text"  required name="nombre" placeholder={`Nombre:${dataUser.nombre}`} onChange={newhandleChange} />
+                            <input type="text"  required name="apellido" placeholder={`Apellido:${dataUser.apellido}`} onChange={newhandleChange} />
+                            <input type="password" required  name="contrasena" placeholder={`Contraseña:${dataUser.contrasena}`} onChange={newhandleChange} />
+                            <input type="number"  required name="celular" placeholder={`Celular:${dataUser.celular}`} onChange={newhandleChange} />
+                            <input type="text" required name="direccion_residencia" placeholder={`Ciudad:${dataUser.direccion_residencia}`} onChange={newhandleChange} />
 
                             <div className="container-buttons">
-                                <a><button onClick={updateUser} className='secondary-button'>ACTUALIZAR</button></a>
+                                <a><button type="submit" className='secondary-button'>ACTUALIZAR</button></a>
                                 <a><button onClick={() => handleSubmitDelete(dataUser.id)} className='secondary-button'>BORRAR CUENTA</button></a>
                             </div>
-                    </div>
+                        </form>
+                </div>
+
                     <div className="ListVideogames">
-                        <a href={`/videogame/${correo}`}><img src={control} /></a>
+                        <a href={`/videogame`}><img src={control} /></a>
                     </div>
                     
             </body>
@@ -101,7 +105,7 @@ function MyAccount(){
                     <div className='container-delete'>
                         <h2>Perfil Actualizado!!</h2>
                         <p>Tus datos fueron actualizados</p>
-                        <a href={`/videogame/${correo}`}><button>Juegos</button></a>
+                        <a href={`/videogame`}><button>Juegos</button></a>
                     </div>
                 </Modal2>
             )}

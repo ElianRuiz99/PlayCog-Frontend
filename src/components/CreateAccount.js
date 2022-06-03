@@ -5,6 +5,8 @@ import './styles/CreateAccount.css';
 //api
 import { saveUser } from "../api/UserService";
 import { Modal } from "../modal/Modal";
+import { MyAccount } from "./MyAccount";
+
 
 //modal
 
@@ -12,8 +14,6 @@ import { Modal } from "../modal/Modal";
 function CreateAccount(){
     //Estado Modal 
     const [openModal, setOpenModal] = React.useState(false);
-
-    const [correo, setCorreo] = React.useState('')
 
     //Estado del formulario
     const [form, setForm] = React.useState({});
@@ -31,15 +31,10 @@ function CreateAccount(){
         e.preventDefault();
         console.log('Formulario Enviado');
 
-        //guardar estado identificador
-        setCorreo(form.correo)
-
-        // console.log(correo)
-        console.log(form);
         //guardar usuario
         saveUser(form)
 
-        //abrir el modal
+        //abrir modal
         setOpenModal(true)
     }
 
