@@ -50,19 +50,11 @@ function MyAccount(props){
 
     const searchUser = () => {
         axios({
-            url: `https://playcog.uc.r.appspot.com//user/${correo}`,
+            url: `https://playcog.uc.r.appspot.com/user/${correo}`,
         })
             .then(response =>{
-                if(response.data.fecha_nacimiento == null){
-                    console.log(response.data)
-                    setDataUser(response.data)
-                }else{
-                    let dividirFecha = response.data.fecha_nacimiento.split(' ');
-                    let fecha = dividirFecha[0];
-                    response.data.fecha_nacimiento = fecha;
-                    console.log(response.data)
-                    setDataUser(response.data) 
-                }   
+                console.log(response.data)
+                setDataUser(response.data)    
             })
             .catch(err =>{
                 console.log(err)
