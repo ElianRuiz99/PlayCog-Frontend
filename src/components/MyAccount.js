@@ -65,12 +65,6 @@ function MyAccount(props){
         <>
             <body background={fondo}>
                 <div className='form-container'>
-                    <label>Digite su Correo para traer sus datos:</label>
-                    <input type="text" name="correo" placeholder="Correo" required onChange={saveCorreo}/>
-                    <button onClick={searchUser} className='secondary-button'>TRAER DATOS</button>
-                </div>
-
-                <div className='form-container'>
                     <h1>Mi Cuenta</h1>
                         <form onSubmit={updateUser}>
                             <input type="text"  required name="nombre" placeholder={`Nombre:${dataUser.nombre}`} onChange={newhandleChange} />
@@ -84,6 +78,11 @@ function MyAccount(props){
                                 <a><button onClick={() => handleSubmitDelete(dataUser.id)} className='secondary-button'>BORRAR CUENTA</button></a>
                             </div>
                         </form>
+                </div>
+                <div className='form-container'>
+                    <label>Digite su Correo para traer sus datos:</label>
+                    <input type="text" name="correo" placeholder="Correo" required onChange={saveCorreo}/>
+                    <button onClick={searchUser} className='secondary-button'>TRAER DATOS</button>
                 </div>
 
                     <div className="ListVideogames">
